@@ -1,3 +1,8 @@
+
+
+
+
+
 *bugs.txt*          For ECAM        Last change: 2016 July 7
 
 ECAM BUG DATABASE
@@ -12,7 +17,39 @@ ECAM BUG DATABASE
 ==============================================================================
   Know bugs *NOT* fixed
 ==============================================================================
-  *NONE*
+  *Bug* : json file AP reading 
+  
+    * 1. Complete steps to reproduce the bug:
+      If you open the attached file "2016-I Trim EPS ILO SA.json" with the current version of the ECAM tool as an example, the assessment period (ap) will be changed from the original ap (3month) to a default ap (365days). Opening the textfile with text editor shows, that the original ap is still there, but apparently cannot be interpreted properly by the web interface. As a consequence, input data will refer to a different ap. If you change ap back to 3 month, your input data will be compromised.
+
+    * 2. Expected behavior:
+      AP should not change when reading in json files
+      
+    * 3. Observed (buggy) behavior:
+    see no 1 above
+
+    * 4. Who is it assinged to:
+    LLuís
+    
+    * 5. Whether it has been fixed or not
+    No
+  
+  *Bug* : Value input editing 
+ 
+* 1. Complete steps to reproduce the bug:
+      A minor bug is the way to input values in the input data cells: If you mistype an input value its not possible to change only a single digit of the value. User has to retype the whole value every time he/she wants to change something. Especially with larger input values that can become a bit frustrating.
+As far as I experienced, "copy and pasting" values is limited due to the fact, that decimal points are difficult to interpret by the tool.
+    * 2. Expected behavior:
+     You should be able to easily edit or copy and paste values in various input fields
+      
+    * 3. Observed (buggy) behavior:
+    see no 1 above
+
+    * 4. Who is it assinged to:
+    LLuís
+    
+    * 5. Whether it has been fixed or not
+    No
 ==============================================================================
   Know bugs fixed
 ==============================================================================
